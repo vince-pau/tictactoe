@@ -1,0 +1,91 @@
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 5px;
+    margin-bottom: 20px;
+    border: 2px solid #333;
+    width: 310px; /* 3*100 + 2*5 */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    cursor: pointer;
+    color: #333;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #e9e9e9;
+}
+
+.cell.X {
+    color: #ff5252; /* Red for X */
+}
+
+.cell.O {
+    color: #448aff; /* Blue for O */
+}
+
+.status-message {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+#reset-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+    background-color: #0056b3;
+}
+
+#fireworks-container {
+    position: fixed; /* Changed from absolute to fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Ensure it's on top */
+    pointer-events: none; /* Allow clicks to pass through */
+}
